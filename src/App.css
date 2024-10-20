@@ -1,38 +1,243 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 20px 0px 20px;
+  height: 80px;
+  border-bottom: 1px solid rgb(213, 207, 207);
+}
+
+.navbar {
+  display: flex;
+  gap: 15px;
+
+}
+
+.nav_item {
+  text-decoration: none;
+  /* border: 1px solid rgb(213, 207, 207); */
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.nav_item_active {
+  background-color: rgb(241, 237, 237);
+  padding: 8px;
+  border-radius: 8px;
+
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.book-card {
+  width: 300px;
+  /* height: 300px; */
+  margin: 20px;
+  border: 3px solid rgb(198, 197, 197);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+
+}
+
+
+.book-card-details {
+  width: 500px;
+  /* height: 300px; */
+  margin: 20px;
+  border: 3px solid rgb(198, 197, 197);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.book-card:hover {
+  border: 3px solid rgb(145, 79, 79);
+}
+
+.book_card_image {
+  width: 100%;
+  height: 300px;
+  object-fit: fill;
+}
+
+.book-card_title {
+  font-weight: 700;
+  color: #4e5765;
+  font-size: 16px;
+  margin: 10px 0px 5px 0px;
+}
+
+.book-card_author {
+  font-weight: 500;
+  color: gray;
+  font-size: 14px;
+  margin: 10px 0px 5px 0px;
+}
+
+.card_author_by {
+  font-weight: 800;
+  color: #4e5765;
+  font-size: 14px;
+  margin: 10px 0px 5px 0px;
+}
+
+.add_wishlist {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+.add_wishlist:hover {
+  /* border: 3px solid rgb(145, 79, 79); */
+  border: 3px solid rgb(198, 197, 197);
+}
+
+.search_filter {
+  text-align: center;
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search_filter input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(198, 197, 197);
+
+}
+
+.btn_class {
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 8px;
+  border: 1px solid rgb(198, 197, 197);
+  margin-bottom: 20px;
+}
+
+.search_filter select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(198, 197, 197);
+}
+
+.booklist_page {
+  background-color: #F3F5F9;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+}
+
+.wishlist-item img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+/* modal css */
+.modal {
+  width: 200px;
+  height: 80px;
+  margin: auto;
+  border: 3px solid rgb(198, 197, 197);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: #fff;
+}
+
+.modal-body {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wishlist_item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border: 2px solid indigo;
+  border-radius: 50%;
+  border-top-color: #0001;
+  display: inline-block;
+  animation: loadingspinner .7s linear infinite;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes loadingspinner {
+  0% {
+    transform: rotate(0deg)
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    transform: rotate(360deg)
   }
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .book-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav_bar {
+    width: 100%;
+  }
+
+  .search_filter {
+    margin: 0px 20px 0px 20px;
+  }
+
+  .search_filter input {
+    width: 50%;
+  }
+
+  .search_filter select {
+    width: 50%;
+  }
+
+  .wishlist_item {
+    flex-direction: column;
+  }
+
+  .book-card-details {
+    width: 300px;
+  }
+
 }
