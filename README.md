@@ -16,6 +16,7 @@ https://gutendex.com/books
 
 ** Homepage and Wishlist page are created
 ** Navbar created
+** A loader adder while calling the API.
 ** You can see individual item by clicking "Detail" button
 ** Designed the layout using html, css
 ** FUlly responsive
